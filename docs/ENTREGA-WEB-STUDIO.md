@@ -1,7 +1,7 @@
 # Entrega WEB STUDIO — Advocacia Criminal
 
 ## Síntese
-Versão institucional estática, responsiva e editorial para revisão do responsável. A estrutura atende às páginas previstas por meio de seções navegáveis: início, escritório, profissional/equipe de apoio, áreas de atuação, conteúdos, perguntas frequentes, contato/localização e privacidade. As oito frentes criminais possuem explicação individual expansível.
+Versão institucional estática, responsiva e editorial para revisão do responsável. A página inicial organiza as seções de escritório, profissional/equipe de apoio, áreas, conteúdos, FAQ, contato/localização e privacidade. Foram criadas oito páginas HTML individuais para as frentes criminais, além de explicações expansíveis na página inicial.
 
 ## Fatos extraídos do briefing
 - Atuação declarada: Direito Criminal; Direito Penal Econômico como subárea complementar.
@@ -25,7 +25,7 @@ Versão institucional estática, responsiva e editorial para revisão do respons
 - Formulário com validação nativa e cópia local da mensagem; nenhum dado é enviado ou armazenado.
 - Política preliminar de privacidade e aviso persistente de revisão.
 - Metadados básicos, Open Graph e JSON-LD institucional sem endereço ou OAB fictícios.
-- Links de navegação por âncora e foco visível.
+- Links de navegação por âncora e foco visível.\n- Oito páginas individuais de áreas criminais com metadados próprios e navegação responsiva.
 
 ## Pendências obrigatórias antes da publicação
 1. Confirmar nome profissional/razão social e inscrição OAB/UF em fonte documental.
@@ -53,7 +53,7 @@ Versão institucional estática, responsiva e editorial para revisão do respons
 ## QA — revisão independente por checklist
 - Conteúdo e integridade: alerta de versão de revisão, credenciais e endereço fictícios não apresentados como dados validados; sem depoimentos, casos, resultados ou promessas.
 - Responsividade: breakpoints para telas até 700px e 900px; inspeção estática de regras mobile-first. Teste em dispositivos reais não executado.
-- Acessibilidade: landmarks semânticos, skip link, labels, foco visível, aria-expanded, live region e controles nativos. Auditoria automatizada WCAG/contraste não executada.
+- Acessibilidade: landmarks semânticos, skip link, labels (incluindo checkbox associado por aninhamento), foco visível, aria-expanded, live region e controles nativos. Contraste do texto de destaque sobre creme verificado por cálculo (6,20:1); contraste do texto escuro sobre dourado (5,35:1). Auditoria automatizada WCAG não executada.
 - Movimento: respeita prefers-reduced-motion; não bloqueia scroll.
 - Segurança e privacidade: sem backend, cookies de analytics, armazenamento ou upload; formulário apenas copia texto localmente. A conexão externa de fontes Google deve ser revista para publicação.
 - SEO: title, description, Open Graph, headings e JSON-LD básico. Sitemap não incluído porque o domínio ainda não foi confirmado.
