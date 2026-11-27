@@ -1,22 +1,54 @@
-# Rafael Andrade — Advocacia Criminal
+# Projeto Advogado — WEB STUDIO
 
-Site institucional em versão de revisão, desenvolvido a partir do briefing recebido em 27/11/2026.
+Repositório do primeiro projeto conduzido pelo **WEB STUDIO Agent Team**.
 
-## Rodar localmente
-É um site estático, sem dependências de runtime. Abra `index.html` no navegador ou sirva a pasta com qualquer servidor HTTP estático.
+> O ambiente do estúdio está incluído neste repositório: 9 agentes, 10 skills, instruções, prompt mestre e Dev Container para GitHub Codespaces.
 
-Exemplo:
-```bash
-python3 -m http.server 8080
+## Abrir no Chromebook
+
+1. Entre na sua conta GitHub.
+2. [Abra/crie o Codespace desta branch](https://codespaces.new/henriquefelix8920/advogado/tree/studio/advogado?quickstart=1).
+3. Aguarde o VS Code Web carregar o projeto.
+4. Entre no GitHub Copilot, caso solicitado.
+5. No Chat, selecione **Diretor WEB STUDIO**.
+
+Não é necessário instalar Node, Git ou VS Code no Chromebook. O desenvolvimento roda no Codespace.
+
+## Primeiro passo: briefing
+
+Adicione o briefing original em `docs/briefing/` ou anexe o arquivo diretamente ao Chat do Copilot. Consulte `docs/briefing/README.md` antes de compartilhar material confidencial. Preserve uma cópia do original; o Diretor deve distinguir informações confirmadas, hipóteses e lacunas.
+
+Depois, envie ao Diretor:
+
+```text
+Diretor WEB STUDIO, leia AGENTS.md, docs/MASTER-PROMPT-WEB-STUDIO-v4.md,
+docs/TEAM-MANUAL.md e o briefing em docs/briefing/.
+Conduza o discovery completo deste projeto de advocacia.
+Não implemente ainda: entregue diagnóstico, estratégia, posicionamento,
+estrutura do site, direção visual, copy, arquitetura, motion e pendências.
+Não invente informações jurídicas, resultados, clientes ou credenciais.
 ```
 
 ## Estrutura
-- `index.html`: conteúdo institucional, áreas, artigos, FAQ, contato e privacidade.
-- `styles.css`: identidade visual e responsividade.
-- `app.js`: navegação mobile, movimento progressivo e validação/cópia local do formulário.
-- `docs/ENTREGA-WEB-STUDIO.md`: decisões, pendências, QA e limites da entrega.
+- `.github/agents/`: Diretor e 8 especialistas.
+- `.github/skills/`: 10 skills.
+- `.github/instructions/`: instruções persistentes.
+- `AGENTS.md`: regras globais.
+- `docs/MASTER-PROMPT-WEB-STUDIO-v4.md`: método completo.
+- `docs/briefing/`: material do cliente.
+- `.devcontainer/`: configuração Codespaces.
 
-## Importante antes de publicar
-O projeto usa nome de demonstração e dados profissionais não confirmados. A faixa de revisão permanece visível de propósito. Não publicar antes de validar nome, inscrição OAB, contatos, endereço, biografia, fotografia, qualificações, plantão 24h e textos jurídicos. O formulário não envia dados a um servidor: apenas valida e tenta copiar a mensagem no dispositivo. Integração de envio depende de canal confirmado e decisão de privacidade/segurança.
+## Governança
+Trabalhe em branches `studio/<slug>`; nunca faça commit/push diretamente em `main`. Push requer autorização explícita. PR e merge são aprovações separadas. Não contrate serviços pagos, publique dados ou altere produção sem autorização.
 
-Paleta de marca: primária `#101D2C`, secundária `#F3EFE6`, acento `#B18A4A`.
+## Estado inicial
+Estrutura de desenvolvimento criada em `studio/advogado`. Nenhum briefing do cliente foi adicionado ainda e nenhuma aplicação foi implementada.
+
+
+## Site institucional — Advocacia Criminal
+
+A aplicação estática de revisão está em `index.html`, com estilos em `styles.css`, interações em `app.js` e páginas individuais das áreas criminais em `areas/`.
+
+Para visualizar localmente, execute `python3 -m http.server 8080` na raiz e abra `http://localhost:8080`.
+
+Consulte `docs/ENTREGA-WEB-STUDIO.md` para decisões, escopo, QA, limitações e pendências. Os dados profissionais, endereço e canais de contato permanecem sujeitos à confirmação; não publique antes da revisão indicada.
