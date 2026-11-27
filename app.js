@@ -8,7 +8,7 @@ const nav=document.querySelector(".main-nav");const toggle=document.querySelecto
   progress.innerHTML="<span></span>";
   document.body.appendChild(progress);
   const progressFill=progress.firstElementChild;
-  const revealTargets=document.querySelectorAll(".hero-copy > *, .hero-art > *, .intro-layout > *, .principles article, .section-heading > *, .practice-item, .urgent > *, .professional-layout > *, .article-card, .faq-layout > *, .faq-list details, .contact-layout > *, .area-hero-inner > *, .area-content-grid > *");
+  const revealTargets=document.querySelectorAll(".hero-copy > *, .intro-layout > *, .principles article, .section-heading > *, .practice-item, .urgent > *, .professional-layout > *, .article-card, .faq-layout > *, .faq-list details, .contact-layout > *, .area-hero-inner > *, .area-content-grid > *");
   if(!reduce && "IntersectionObserver" in window){
     const revealObserver=new IntersectionObserver(entries=>{
       entries.forEach(entry=>{
