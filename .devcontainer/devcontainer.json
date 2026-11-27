@@ -1,0 +1,26 @@
+{
+  "name": "WEB STUDIO Agent Team",
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": { "version": "lts" },
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": ["GitHub.copilot", "GitHub.copilot-chat", "dbaeumer.vscode-eslint", "esbenp.prettier-vscode"],
+      "settings": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "chat.agent.enabled": true
+      }
+    }
+  },
+  "forwardPorts": [3000, 4173, 5173, 8080],
+  "portsAttributes": {
+    "3000": { "label": "Aplicação WEB STUDIO", "onAutoForward": "notify" },
+    "5173": { "label": "Vite", "onAutoForward": "notify" },
+    "4173": { "label": "Preview de produção", "onAutoForward": "notify" }
+  },
+  "postCreateCommand": "node --version && npm --version",
+  "remoteUser": "codespace"
+}
