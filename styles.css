@@ -46,3 +46,21 @@ section.is-visible .section-index i{transform:scaleX(1.7)}
 @media(min-width:701px){.hero-art:hover .orbit-one{transform:translateZ(50px) rotate(-23deg)}.hero-art:hover .orbit-two{transform:translateZ(90px) rotate(40deg)}.article-card:nth-child(2){transition-delay:70ms}.article-card:nth-child(3){transition-delay:140ms}}
 @media(max-width:700px){.hero-art{perspective:800px}.orbit-one{animation-duration:26s}.orbit-two{animation-duration:30s}.article-card{transform:none!important;box-shadow:none}.portrait-placeholder{transform:none;box-shadow:none}.motion-item{transform:translate3d(0,20px,0)}}
 @media(prefers-reduced-motion:reduce){.motion-item{opacity:1;transform:none;transition:none}.orbit-one,.orbit-two{animation:none}.hero-grid,.hero-art,.area-number,.area-hero:after{translate:none;transform:none}.article-card,.principles article,.portrait-placeholder{transition:none;transform:none}.scroll-progress{display:none}}
+
+/* Transições direcionais: cada família de conteúdo chega de um eixo próprio */
+.element-enter{opacity:0;transition:opacity .85s var(--motion-ease),transform 1s var(--motion-ease),filter 1s var(--motion-ease);transition-delay:var(--element-delay,0ms);will-change:opacity,transform;filter:blur(3px)}
+.element-enter[data-origin="left"]{transform:translate3d(-58px,0,0) rotateY(5deg)}
+.element-enter[data-origin="right"]{transform:translate3d(58px,0,0) rotateY(-5deg)}
+.element-enter[data-origin="top"]{transform:translate3d(0,-35px,0)}
+.element-enter[data-origin="bottom"]{transform:translate3d(0,42px,0)}
+.element-enter.element-entered{opacity:1;transform:translate3d(0,0,0) rotateY(0);filter:blur(0)}
+.element-enter.button,.element-enter.text-link,.element-enter.underlined-link{transition:opacity .7s var(--motion-ease),transform .8s var(--motion-ease),filter .8s var(--motion-ease),box-shadow .3s}
+.element-enter.button[data-origin="bottom"]{transform:translate3d(0,30px,0) scale(.94)}
+.element-enter.button.element-entered{transform:translate3d(0,0,0) scale(1)}
+@media(max-width:700px){
+ .element-enter[data-origin="left"]{transform:translate3d(-28px,0,0)}
+ .element-enter[data-origin="right"]{transform:translate3d(28px,0,0)}
+ .element-enter[data-origin="top"]{transform:translate3d(0,-22px,0)}
+ .element-enter[data-origin="bottom"]{transform:translate3d(0,25px,0)}
+}
+@media(prefers-reduced-motion:reduce){.element-enter{opacity:1;transform:none;filter:none;transition:none}}
