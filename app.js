@@ -61,3 +61,42 @@ const nav=document.querySelector(".main-nav");const toggle=document.querySelecto
     });
   }
 })();
+
+/* WEB STUDIO · entradas direcionais por elemento */
+(()=>{
+  const reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const groups=[
+    [".eyebrow,.section-index,.area-breadcrumb","top"],
+    ["h1,h2,h3,.hero h1,.area-hero h1","left"],
+    [".hero-lead,.lead,.area-lead,.section-heading>p,.professional-copy>p,.faq-layout>div:first-child>p","right"],
+    [".button,.text-link,.underlined-link,.nav-contact","bottom"],
+    [".practice-desc,.practice-body,.faq-list details p,.article-full","bottom"]
+  ];
+  const all=new Set();
+  groups.forEach(([selector,origin])=>{
+    document.querySelectorAll(selector).forEach(el=>{
+      if(el.closest(".site-header,.site-footer")) return;
+      if(el.matches("h1,h2,h3") && el.querySelector("em")) { /* keep inline emphasis intact */ }
+      if(all.has(el)) return;
+      all.add(el);
+      el.classList.add("element-enter");
+      el.dataset.origin=origin;
+    });
+  });
+  if(reduce || !("IntersectionObserver" in window)){
+    all.forEach(el=>el.classList.add("element-entered"));
+    return;
+  }
+  const io=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add("element-entered");
+        io.unobserve(entry.target);
+      }
+    });
+  },{threshold:.14,rootMargin:"0px 0px -4% 0px"});
+  all.forEach((el,i)=>{
+    el.style.setProperty("--element-delay",Math.min(i%5,4)*65+"ms");
+    io.observe(el);
+  });
+})();
